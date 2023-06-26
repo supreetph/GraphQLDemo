@@ -1,3 +1,4 @@
+using GraphQLDemo.Mutations;
 using GraphQLDemo.Resolvers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +9,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddGraphQLServer().AddQueryType<PersonQuery>();
+builder.Services.AddGraphQLServer().AddQueryType<PersonQuery>().AddMutationType<PersonMutation>();
 
 var app = builder.Build();
 
